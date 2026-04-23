@@ -1,8 +1,8 @@
 # Main Page
 _______________________________________________
--Introducere in tema
--Rubrica cu restaurante, selectionate in functie de numarul de stele
--Carte de contact
+-Introducere in tema  
+-Rubrica cu restaurante, selectionate in functie de numarul de stele  
+-Carte de contact  
 
 # Restaurante cu stele Michelin
 ________________________________________________
