@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Per Se - New York</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+	      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+	      crossorigin=""/>
+	<style>
+		#map { height: 300px; }
+	</style>
+</head>
+
+<body>
+	<main class="restaurant-template container">
+		<a class="back-link" href="./site.html">&larr; Inapoi la pagina principala</a>
+
+		<section class="restaurant-hero-card">
+			<div>
+				<h1>Restaurant Per Se</h1>
+				<p class="restaurant-meta"><strong>New York, SUA</strong></p>
+				<p class="restaurant-meta"><strong>Bucatar Sef: Chad Palagi</strong></p>
+			</div>
+			<div class="restaurant-stars" aria-label="3 stele Michelin">
+				<span class="sr-only">3 stele Michelin</span>
+				<img src="../poze/MichelinStar.png" alt="" aria-hidden="true">
+				<img src="../poze/MichelinStar.png" alt="" aria-hidden="true">
+				<img src="../poze/MichelinStar.png" alt="" aria-hidden="true">
+			</div>
+		</section>
+		
+		<section class="restaurant-gallery">
+			<div class="gallery-grid">
+				<div class="gallery-item gallery-item--primary">
+					<img src="../poze/Per-se-interior.png" alt="Interiorul restaurantului Per Se din New York">
+				</div>
+				<div class="gallery-item">
+					<img src="../poze/per-se-5.jpg" alt="Preparat 1">
+				</div>
+				<div class="gallery-item">
+					<img src="../poze/per-se-12.jpg" alt="Preparat 2">
+				</div>
+			</div>
+		</section>
+
+		<section class="restaurant-content-grid">
+			<article class="detail-card technique-card">
+				<h2>Tehnica de preparare / Motivul acordarii</h2>
+				<p style="margin: 0; padding-bottom: 0;">Restaurantul Per Se reprezintă "întruchiparea preciziei matematice aplicate gastronomiei, unde viziunea lui Thomas Keller transformă luxul într-o experiență de o rigoare absolută". Motivele principale includ:</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Execuția ritualică a meniului de nouă feluri:</strong> Cele două meniuri zilnice (cel de degustare al bucătarului și cel de degustare de legume) urmează o structură fixă în care nicio proteină sau legumă nu este utilizată de două ori, forțând o diversitate extremă a tehnicilor.</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Standardul "Keller" al ingredientelor de nișă:</strong> Utilizarea unor produse cu proveniență unică, care sunt rezervate special pentru grupul Keller, asigurând o exclusivitate totală a gustului.</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Dialogul culinar între Coasta de Est și cea de Vest:</strong> Per Se funcționează ca o oglindă a restaurantului The French Laundry, menținând o linie video directă între bucătării pentru a asigura sincronizarea perfectă a tehnicilor și a inovațiilor între cele două locații de 3 stele.</p>
+				<p style="margin: 0; padding-top: 25px;">Bucătăria de la Per Se se distinge prin tehnici de o finețe chirurgicală, unde complexitatea este ascunsă sub o formă vizuală extrem de sobră. Abordările specifice includ:</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Arhitectura "Oysters and Pearls":</strong> Preparatul semnătură care folosește un sabayon cald de perle de tapioca, stridii Beau Soleil poșate cu precizie și un quenelle generos de caviar Regiis Ova, demonstrând măiestria în controlul texturilor gelatinoase și al salinității.</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Tehnica "Beurre Monté" ca liant fundamental:</strong> Utilizarea untului clarificat și emulsificat într-un mod obsesiv pentru a poșa ingredientele (în special homarul de Maine), asigurând o textură mătăsoasă care nu poate fi obținută prin gătirea convențională.</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Rigoarea finisajelor manuale:</strong> Fiecare element de pe farfurie este trecut prin filtre ultrafine sau modelat cu penseta, iar sosurile sunt reduse până la atingerea unei densități specifice care să permită "nappage"-ul perfect, fără a masca nuanțele primare ale ingredientului principal.</p>
+			</article>
+
+			<article class="detail-card menu-display">
+				<h2>Display meniu</h2>
+				<div class="menu-items">
+					<div class="menu-item">
+						<h3>Oysters and Pearls</h3>
+						<p>Acest amuse-bouche constă în stridii Island Creek servite cu o cremă savuroasă de tapioca perlă (sabayon), acoperite cu icre de sturion Regiis Ova. Este o combinație de texturi și arome bogate, cremoase și marine.</p>
+						<br><p class="menu-price">330 $</p>
+					</div>
+					<div class="menu-item">
+						<h3>Coffee and Doughnuts</h3>
+						<p>Oferă o reinterpretare sofisticată a unei combinații clasice new-yorkeze. Include un semifreddo de cafea cremos, servit cu o frișcă de lapte spumată și un gogoașă caldă, presărată cu zahăr și scorțișoară.</p>
+						<br><p class="menu-price">210 $</p>
+					</div>
+					<div class="menu-item">
+						<h3>Confit Fillet of Scottish Sea Trout</h3>
+						<p>Reprezintă un file de păstrăv scoțian confit, extrem de suculent și aromat. Este așezat pe o bază de cartofi "Pommes de Terre", fasole verde proaspătă (haricots verts), purée de măsline negre și o emulsie fină cu ulei de măsline extra virgin.</p>
+						<p class="menu-price">350 $</p>
+					</div>
+				</div>
+			</article>
+
+			<article class="detail-card">
+				<h2 style="margin-bottom:100px;">Orar</h2>
+				<ul class="schedule-list">
+					<li><span>Luni - Duminica</span><strong>[16:30 - 21:00]</strong></li>
+					<br>
+				</ul>
+			</article>
+			
+			<article>
+				<h2>Locație</h2>
+				<div id="map">
+					
+					<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+					        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+					        crossorigin=""></script>
+					<script>
+						var map = L.map('map').setView([40.768055, -73.982588], 16);
+						L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+							maxZoom: 19,
+							attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+						}).addTo(map);
+						var marker = L.marker([40.768055, -73.982588]).addTo(map);
+						marker.bindPopup("<b>Per Se</b><br>10 Columbus Circle, New York,<br>4.5 ★★★★⯪ ");
+					</script>
+				</div>
+			</article>
+
+		</section>
+
+		<div class="phone-action">
+			<a class="phone-number" href="tel:+1 212-823-9335">Tel: [ +1 212-823-9335 ]</a>
+		</div>
+	</main>
+</body>
+</html>

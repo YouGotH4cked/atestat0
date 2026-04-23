@@ -1,0 +1,1043 @@
+:root {
+    --bg: #f6f7fb;
+    --surface: #ffffff;
+    --surface-soft: #fbfcff;
+    --text: #172033;
+    --muted: #5f6b84;
+    --accent: #b98a2a;
+    --accent-soft: #f5ead0;
+    --border: #e5eaf2;
+    --shadow: 0 18px 50px rgba(23, 32, 51, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.65;
+    color: var(--text);
+    background:
+        radial-gradient(circle at top, rgba(185, 138, 42, 0.08), transparent 36%),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+}
+
+a {
+    color: inherit;
+}
+
+.container {
+    width: min(1140px, calc(100% - 2rem));
+    margin: 0 auto;
+}
+
+.hero {
+    padding: clamp(5rem, 8vw, 6.25rem) 0 2.5rem;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.hero-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.9fr);
+    gap: 1.5rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-backgrounds {
+    position: absolute;
+    inset: 0;
+    height: min(78%, 520px);
+    pointer-events: none;
+    z-index: -2;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 58vw;
+    opacity: 0;
+    transform: translateY(-18px) scale(1.06);
+    filter: saturate(1.05) brightness(0.82);
+    pointer-events: none;
+    transition: opacity 0.9s ease, transform 0.9s ease, filter 0.9s ease;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.hero-bg--left {
+    left: -6vw;
+    clip-path: polygon(0 0, 96% 0, 82% 100%, 0 100%);
+}
+
+.hero-bg--right {
+    right: -6vw;
+    clip-path: polygon(18% 0, 100% 0, 100% 100%, 4% 100%);
+}
+
+.page-loaded .hero-bg {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.page-loaded .hero-bg--left {
+    transition-delay: 0.05s;
+}
+
+.page-loaded .hero-bg--right {
+    transition-delay: 0.2s;
+}
+
+.hero-content,
+.hero-panel {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content,
+.hero-panel,
+.info-card,
+.restaurant-card,
+.contact-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.hero-content {
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.hero-panel {
+    padding: 1.4rem;
+    display: grid;
+    gap: 1rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(252, 250, 244, 0.92) 100%);
+    backdrop-filter: blur(4px);
+}
+
+.hero-panel > div {
+    padding: 1rem 1rem 1.05rem;
+    background: rgba(245, 234, 208, 0.45);
+    border-radius: 16px;
+    border: 1px solid rgba(185, 138, 42, 0.12);
+}
+
+.panel-label {
+    margin: 0 0 0.35rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.eyebrow {
+    margin: 0 0 0.35rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h1 {
+    margin-bottom: 1rem;
+    font-size: clamp(2.35rem, 5vw, 4.5rem);
+    line-height: 1.05;
+}
+
+h2 {
+    margin-bottom: 0.45rem;
+    font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+    line-height: 1.15;
+}
+
+h3 {
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.hero-text,
+.section-lead {
+    color: var(--muted);
+    font-size: 1.02rem;
+    max-width: 70ch;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-top: 1.5rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    background: linear-gradient(180deg, #c99a38, #b17e16);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0.9rem 1.2rem;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 22px rgba(185, 138, 42, 0.22);
+}
+
+.hero-note {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.section {
+    padding: 1rem 0 2.2rem;
+}
+
+.section-heading {
+    margin-bottom: 1rem;
+}
+
+.intro-section,
+.previews-section,
+.contact-section {
+    margin-top: 0.35rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1.25rem;
+}
+
+.info-card,
+.contact-card {
+    padding: 1.3rem;
+}
+
+.info-card p,
+.contact-card p {
+    color: var(--muted);
+}
+
+.preview-groups {
+    display: grid;
+    gap: 1.4rem;
+    margin-top: 1.2rem;
+}
+
+.preview-group {
+    margin: 0;
+}
+
+.preview-group.card-nav {
+    padding: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    will-change: height;
+    height: 60px;
+    transition: height 0.4s ease;
+}
+
+.card-nav-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.5rem 0.45rem 0.55rem 1.1rem;
+    z-index: 2;
+}
+
+.hamburger-menu {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    gap: 6px;
+    padding: 0;
+    flex: 0 0 auto;
+}
+
+.hamburger-menu:hover .hamburger-line {
+    opacity: 0.75;
+}
+
+.hamburger-line {
+    width: 30px;
+    height: 2px;
+    background-color: currentColor;
+    transition: transform 0.25s ease, opacity 0.2s ease, margin 0.3s ease;
+    transform-origin: 50% 50%;
+}
+
+.card-nav.open .hamburger-menu .hamburger-line:first-child {
+    transform: translateY(4px) rotate(45deg);
+}
+
+.card-nav.open .hamburger-menu .hamburger-line:last-child {
+    transform: translateY(-4px) rotate(-45deg);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.group-copy {
+    text-align: center;
+}
+
+.group-kicker {
+    margin: 0 0 0.1rem;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.group-copy h3 {
+    margin: 0;
+    font-size: 1.15rem;
+}
+
+.card-nav-cta-button {
+    appearance: none;
+    background-color: #111;
+    color: white;
+    border: none;
+    border-radius: calc(0.75rem - 0.35rem);
+    padding: 0 1rem;
+    height: 100%;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-items: center;
+    flex: 0 0 auto;
+}
+
+.card-nav-cta-button:hover {
+    background-color: #333;
+    transform: translateY(-1px);
+}
+
+.card-nav-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 60px;
+    bottom: 0;
+    padding: 0.9rem;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+    transform: translateY(10px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+}
+
+.card-nav.open .card-nav-content {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.card-nav-content .restaurant-grid {
+    width: 100%;
+}
+
+.restaurant-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.restaurant-grid--five {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.restaurant-grid--five .restaurant-card {
+    grid-column: span 2;
+}
+
+.restaurant-grid--five .restaurant-card:nth-child(4) {
+    grid-column: 2 / span 2;
+}
+
+.restaurant-grid--five .restaurant-card:nth-child(5) {
+    grid-column: 4 / span 2;
+}
+
+.restaurant-card {
+    display: block;
+    padding: 1.2rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.restaurant-card::after {
+    content: "";
+    position: absolute;
+    inset: auto -20px -20px auto;
+    width: 90px;
+    height: 90px;
+    border-radius: 999px;
+    background: radial-gradient(circle, rgba(185, 138, 42, 0.16), transparent 70%);
+}
+
+.restaurant-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(185, 138, 42, 0.35);
+    box-shadow: 0 18px 32px rgba(23, 32, 51, 0.1);
+}
+
+.card-star {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-bottom: 0.75rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: #8f6411;
+    font-size: 0.96rem;
+    font-weight: 700;
+}
+
+.card-star img {
+    width: 1.15em;
+    height: 1.15em;
+    object-fit: contain;
+    flex: 0 0 auto;
+    display: block;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.restaurant-card p {
+    color: var(--muted);
+    margin-bottom: 0;
+}
+
+.contact-section .contact-directory {
+    padding: 0.95rem 0.2rem 0;
+}
+
+.contact-section .contact-cards {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1rem;
+}
+
+.contact-section .contact-person-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 1.15rem;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 24px;
+    box-shadow: 0 10px 24px rgba(23, 32, 51, 0.16);
+    background: linear-gradient(180deg, #fff 0%, #fdf9ee 100%);
+    text-align: left;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.contact-section .contact-person-card img {
+    width: 100%;
+    max-width: 120px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.35s ease, transform 0.35s ease;
+    flex: 0 0 auto;
+}
+
+.contact-section .contact-card-details {
+    text-align: left;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0);
+    min-width: 0;
+    width: 100%;
+    transition: text-shadow 0.35s ease;
+}
+
+.contact-section .contact-card-details > span,
+.contact-section .contact-card-details > a {
+    display: block;
+    padding: 0 0 0 2rem;
+    margin-bottom: 0.62rem;
+    text-decoration: none;
+    position: relative;
+    overflow-wrap: anywhere;
+    line-height: 1.35;
+}
+
+.contact-section .contact-card-details > span:last-child,
+.contact-section .contact-card-details > a:last-child {
+    margin-bottom: 0;
+}
+
+.contact-section .contact-card-details > span::before,
+.contact-section .contact-card-details > a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.2rem;
+    height: 1.2rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.contact-section .contact-card-details a {
+    color: #b98a2a;
+    transition: color 0.3s ease;
+}
+
+.contact-section .contact-card-details a:hover,
+.contact-section .contact-card-details a:focus {
+    color: #b98a2a;
+}
+
+.contact-section .contact-name {
+    font-weight: 700;
+}
+
+.contact-section .contact-name::before {
+    background-image: url("../poze/Human-Icon-PNG-Photo.png");
+}
+
+.contact-section .contact-role::before {
+    background-image: url("../poze/wrench.png");
+}
+
+.contact-section .contact-phone::before {
+    background-image: url("../poze/phone-call.png");
+}
+
+.contact-section .contact-email::before {
+    background-image: url("../poze/email.png");
+}
+
+.contact-section .contact-person-card:hover {
+    background: linear-gradient(180deg, #fffbf3 0%, #fbfcff 100%);
+    transform: scale(1.02);
+    box-shadow: 0 14px 28px rgba(23, 32, 51, 0.2);
+}
+
+.contact-section .contact-person-card:hover img {
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    transform: scale(1.02);
+}
+
+.contact-section .contact-person-card:hover .contact-card-details {
+    text-shadow: 1px 1px #dfe295;
+}
+
+.contact-card {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    background: linear-gradient(135deg, #fff 0%, #fcfaf4 100%);
+    border: 2px solid var(--border);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+}
+
+.contact-card p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid rgba(185, 138, 42, 0.15);
+    margin: 0;
+    transition: all 0.2s ease;
+}
+
+.contact-card p:hover {
+    border-color: var(--accent);
+    box-shadow: 0 6px 16px rgba(185, 138, 42, 0.12);
+    transform: translateX(4px);
+}
+
+.contact-card strong {
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.footer {
+    margin-top: 1rem;
+    padding: 1.3rem 0 2rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+}
+
+.restaurant-template {
+    padding: 2.4rem 0 2.8rem;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back-link:hover {
+    color: var(--accent);
+}
+
+.restaurant-hero-card {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    padding: 1.4rem;
+    margin-bottom: 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.restaurant-subtitle {
+    margin: 0.55rem 0 0;
+    color: var(--muted);
+}
+
+.restaurant-meta {
+    margin: 0 0 0.3rem;
+    color: var(--muted);
+}
+
+.restaurant-stars {
+    display: inline-flex;
+    gap: 0.45rem;
+    padding: 0.45rem 0.75rem;
+    background: var(--accent-soft);
+    border-radius: 999px;
+}
+
+.restaurant-stars img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.restaurant-gallery {
+    margin: 1.5rem 0 2rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.9rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    aspect-ratio: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item--primary {
+    grid-column: span 1;
+    grid-row: span 2;
+    aspect-ratio: auto;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 40px rgba(23, 32, 51, 0.14);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.04);
+}
+
+.restaurant-content-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.detail-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    padding: 1.2rem;
+}
+
+.technique-card {
+    grid-column: 1 / -1;
+    min-height: 220px;
+    padding: 1.45rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.technique-card::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    pointer-events: none;
+    background:
+        linear-gradient(90deg, transparent 0%, rgba(185, 138, 42, 0.06) 100%),
+        radial-gradient(circle, rgba(185, 138, 42, 0.12) 3px, transparent 3px);
+    background-size: auto, 18px 18px;
+    background-position: right center, right center;
+    background-repeat: no-repeat, repeat;
+}
+
+.technique-card p {
+    max-width: 95ch;
+}
+
+.menu-display {
+    grid-column: 1 / -1;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 0.8rem;
+}
+
+.menu-item {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--surface-soft);
+    padding: 0.9rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-3px);
+    border-color: rgba(185, 138, 42, 0.35);
+    background: linear-gradient(180deg, #fffbf3 0%, #fbfcff 100%);
+    box-shadow: 0 12px 24px rgba(185, 138, 42, 0.12);
+}
+
+.menu-item p {
+    margin-bottom: 0.4rem;
+    color: var(--muted);
+}
+
+.menu-price {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.schedule-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.45rem;
+}
+
+.schedule-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.65rem 0.75rem;
+    border-radius: 10px;
+    background: var(--surface-soft);
+    border: 1px solid var(--border);
+}
+
+.phone-action {
+    margin-top: 0.85rem;
+}
+
+.phone-number {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.45rem 0.75rem;
+    border-radius: 999px;
+    border: 1px solid rgba(185, 138, 42, 0.35);
+    background: rgba(245, 234, 208, 0.55);
+    color: #84570a;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.phone-number::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    background-image: url("../poze/phone-call.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition: transform 0.2s ease;
+}
+
+.phone-number:hover {
+    transform: translateY(-3px);
+    border-color: rgba(185, 138, 42, 0.42);
+    background: linear-gradient(180deg, #fff8e9 0%, #fff 100%);
+    box-shadow: 0 10px 18px rgba(23, 32, 51, 0.16);
+}
+
+.phone-number:hover::before {
+    transform: rotate(-10deg) scale(1.06);
+}
+
+@media (max-width: 900px) {
+    .hero-inner,
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-backgrounds {
+        height: min(70%, 420px);
+    }
+
+    .hero-bg {
+        width: 78vw;
+        opacity: 0.42;
+        filter: saturate(1.02) brightness(0.76);
+    }
+
+    .hero-bg--left {
+        left: -14vw;
+    }
+
+    .hero-bg--right {
+        right: -14vw;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .gallery-item--primary {
+        grid-column: span 1;
+        grid-row: span 1;
+        aspect-ratio: 1;
+    }
+
+    .restaurant-grid--five {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .restaurant-grid--five .restaurant-card,
+    .restaurant-grid--five .restaurant-card:nth-child(4),
+    .restaurant-grid--five .restaurant-card:nth-child(5) {
+        grid-column: auto;
+    }
+
+    .restaurant-hero-card,
+    .schedule-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+    .restaurant-content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 720px) {
+    .container {
+        width: min(1140px, calc(100% - 1.1rem));
+    }
+
+    .hero {
+        padding-top: 2.6rem;
+    }
+
+    .hero-backgrounds {
+        height: 220px;
+    }
+
+    .hero-bg {
+        width: 100%;
+        opacity: 0.28;
+        clip-path: none;
+        filter: saturate(1) brightness(0.72);
+    }
+
+    .hero-bg--left {
+        left: 0;
+    }
+
+    .hero-bg--right {
+        right: 0;
+        top: 80px;
+    }
+
+    .card-nav-top {
+        padding: 0.5rem 1rem;
+        justify-content: space-between;
+    }
+
+    .hamburger-menu {
+        order: 2;
+    }
+
+    .logo-container {
+        position: static;
+        transform: none;
+        order: 1;
+    }
+
+    .card-nav-cta-button {
+        display: none;
+    }
+
+    .card-nav-content {
+        padding: 0.5rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item--primary {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .restaurant-grid--five {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-section .contact-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-section .contact-person-card {
+        flex-direction: column;
+        max-width: 340px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .contact-section .contact-person-card img {
+        margin: 0 auto;
+    }
+
+    .contact-section .contact-card-details {
+        margin-top: 0.2rem;
+        text-align: center;
+    }
+
+    .contact-section .contact-card-details > span,
+    .contact-section .contact-card-details > a {
+        padding: 0;
+    }
+
+    .contact-section .contact-card-details > span::before,
+    .contact-section .contact-card-details > a::before {
+        display: none;
+    }
+}
+

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Babel - Budapesta</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+	      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+	      crossorigin=""/>
+	<style>
+		#map { height: 300px; }
+	</style>
+</head>
+
+<body>
+	<main class="restaurant-template container">
+		<a class="back-link" href="./site.html">&larr; Inapoi la pagina principala</a>
+
+		<section class="restaurant-hero-card">
+			<div>
+				<h1>Restaurant Babel</h1>
+				<p class="restaurant-meta"><strong>Budapesta, Ungaria</strong></p>
+				<p class="restaurant-meta"><strong>Bucatar Sef: Kornel Kaszas</strong></p>
+			</div>
+			<div class="restaurant-stars" aria-label="1 stea Michelin">
+				<span class="sr-only">1 stea Michelin</span>
+				<img src="../poze/MichelinStar.png" alt="" aria-hidden="true">
+			</div>
+		</section>
+
+		<section class="restaurant-gallery">
+			<div class="gallery-grid">
+				<div class="gallery-item gallery-item--primary">
+					<img src="../poze/169444-albums-1.jpg" alt="Interiorul restaurantului Babel din Budapesta">
+				</div>
+				<div class="gallery-item">
+					<img src="../poze/169444-albums-4.jpg" alt="Preparat 1">
+				</div>
+				<div class="gallery-item">
+					<img src="../poze/169444-albums-5.jpg" alt="Preparat Ou">
+				</div>
+			</div>
+		</section>
+
+		<section class="restaurant-content-grid">
+			<article class="detail-card technique-card">
+				<h2>Tehnica de preparare / Motivul acordarii</h2>
+				<p style="margin: 0; padding-bottom: 0;">Babel reprezintă "amestecul perfect între tradiție și modernitate". Motivele principale includ:</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Identitatea regională puternică:</strong> Restaurantul se concentrează pe rădăcinile austro-ungare și, în mod specific, pe moștenirea culinară a Transilvaniei.</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Narațiunea gastronomică:</strong> Fiecare preparat spune o poveste despre natură, amintiri din copilărie sau peisaje rurale, oferind o experiență senzorială completă (storytelling).</p>
+				<p style="margin: 0; padding-top: 25px;">Bucătăria de la Babel este definită prin inovație aplicată pe rețete rustice. De-a lungul timpului s-au evidențiat următoarele abordări:</p>
+				<p style="margin: 0; padding-top: 0;"><strong>•Fermentarea și conservarea:</strong> Se folosesc tehnici tradiționale de conservare a legumelor și plantelor sălbatice, reinterpretate pentru a crea texturi noi</p>
+				<p style="margin: 0; padding-top: 0;"><strong>•Gătirea cu elemente naturale:</strong> Utilizarea coniferelor (pinului), a fânului sau a cărbunelui pentru a infuza arome de fum sau de pădure. Un preparat emblematic este untul infuzat cu pin.</p>
+				<p style="margin: 0; padding-top: 0;"><strong>•Sourcing local și sălbatic:</strong> Multe ingrediente sunt culese direct din natură sau provin de la ferme mici, punând accent pe puritatea gustului primar.</p>
+			</article>
+
+			<article class="detail-card menu-display">
+				<h2>Display meniu</h2>
+				<div class="menu-items">
+					<div class="menu-item">
+						<h3>Oul Casino</h3>
+						<p>O reinterpretare de lux a unui clasic maghiar, servit adesea cu caviar de sturion ca extra opțiune.</p>
+						<p class="menu-price">42 €</p>
+					</div>
+					<div class="menu-item">
+						<h3>Cartof Stratificat</h3>
+						<p>Un simbol al Babel: cartof crocant (pomme soufflé) cu bacon Mangalița și castraveți murați în oțet de chili.</p>
+						<p class="menu-price">60 €</p>
+					</div>
+					<div class="menu-item">
+						<h3>Meniul de Degustare (13 porții)</h3>
+						<p>Experiența completă care include preparate precum anghilă afumată, căprioară sau gogoși cu brânză și prune.</p>
+						<p class="menu-price">~200 €</p>
+					</div>
+				</div>
+			</article>
+
+			<article class="detail-card">
+				<h2 style="padding-bottom:20px;">Orar</h2>
+				<ul class="schedule-list">
+					<li><span>Luni</span><strong>[Inchis]</strong></li>
+					<li><span>Marti - Vineri</span><strong>[17:30 - 00:00]</strong></li>
+					<li><span>Sambata</span><strong>[12:00 - 15:00]</strong></li>
+					<li><span>Duminica</span><strong>[Inchis]</strong></li>
+				</ul>
+			</article>
+
+			<article>
+				<h2>Locație</h2>
+				<div id="map">
+					
+					<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+					        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+					        crossorigin=""></script>
+					<script>
+					var map = L.map('map').setView([47.492668, 19.052229], 16);
+					L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+					maxZoom: 19,
+					attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+					}).addTo(map);
+					var marker = L.marker([47.492668, 19.052229]).addTo(map);
+					marker.bindPopup("<b>Babel</b><br>Piarista Köz 2, Budapesta<br>4.6 ★★★★⯪ ");
+					</script>
+				</div>
+			</article>
+		</section>
+
+		<div class="phone-action">
+			<a class="phone-number" href="tel:+36 70 600 0800">Tel: [ +36 70 600 0800 ]</a>
+		</div>
+	</main>
+</body>
+</html>

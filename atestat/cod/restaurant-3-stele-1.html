@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Christopher Coutanceau - La Rochelle</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+	      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+	      crossorigin=""/>
+	<style>
+		#map { height: 300px; }
+	</style>
+</head>
+
+<body>
+	<main class="restaurant-template container">
+		<a class="back-link" href="./site.html">&larr; Inapoi la pagina principala</a>
+
+		<section class="restaurant-hero-card">
+			<div>
+				<h1>Restaurant Christopher Coutanceau</h1>
+				<p class="restaurant-meta"><strong>La Rochelle, Franța</strong></p>
+				<p class="restaurant-meta"><strong>Bucatar Sef: Christopher Coutanceau</strong></p>
+			</div>
+			<div class="restaurant-stars" aria-label="3 stele Michelin">
+				<span class="sr-only">3 stele Michelin</span>
+				<img src="../poze/MichelinStar.png" alt="" aria-hidden="true">
+				<img src="../poze/MichelinStar.png" alt="" aria-hidden="true">
+				<img src="../poze/MichelinStar.png" alt="" aria-hidden="true">
+			</div>
+		</section>
+		
+		<section class="restaurant-gallery">
+			<div class="gallery-grid">
+				<div class="gallery-item gallery-item--primary">
+					<img src="../poze/1240377.jpg" alt="Restaurant Christopher Coutanceau - La Rochelle">
+				</div>
+				<div class="gallery-item">
+					<img src="../poze/1240368.jpg" alt="Preparat din homar">
+				</div>
+				<div class="gallery-item">
+					<img src="../poze/1240382.jpg" alt="Preparat cu turbot si sos de hake afumat">
+				</div>
+			</div>
+		</section>
+		
+		<section class="restaurant-content-grid">
+			<article class="detail-card technique-card">
+				<h2>Tehnica de preparare / Motivul acordarii</h2>
+				<p style="margin: 0; padding-bottom: 0;">Restaurantul Christopher Coutanceau reprezintă "o imersiune totală în universul marin și un angajament profund pentru ocean". Motivele principale includ:</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Omagiu suprem adus oceanului:</strong> Preparatele celebrează exclusiv fructele de mare și peștele, reflectând pasiunea unui "bucătar-pescar" dedicat și evidențiind prospețimea excepțională a capturii locale.</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Sustenabilitate și responsabilitate ecologică:</strong> Recunoscut și cu Steaua Verde Michelin, restaurantul promovează pescuitul durabil, respectă sezoanele de reproducere și valorifică speciile de pește mai puțin cunoscute.</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Măiestrie în redarea terroir-ului marin:</strong> Transpunerea peisajelor litorale din La Rochelle în farfurie printr-o estetică impecabilă și asocieri de gusturi complexe, cu un echilibru perfect între salinitate și rafinament.</p>
+				<p style="margin: 0; padding-top: 25px;">Bucătăria de la Christopher Coutanceau este definită prin abordarea "zero deșeuri" și respectul absolut pentru produsul marin. De-a lungul timpului s-au evidențiat următoarele abordări:</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Valorificarea integrală a peștelui:</strong> Aplicarea conceptului "nose-to-tail" în mediul marin, folosind capetele, oasele, solzii și chiar organele interne pentru a crea bulioane intense, garum marin sau texturi inedite.</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Gătire și maturare de înaltă precizie:</strong> Utilizarea tehnicilor de învechire a peștelui (dry-aging marin) pentru frăgezire și concentrarea aromelor, alături de gătiri milimetrice, adesea la foc deschis sau în apă de mare.</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Integrarea florei de coastă:</strong> Condimentarea și definirea preparatelor cu ajutorul plantelor halofite (iubitoare de sare), algelor sălbatice și a ierburilor culese direct de pe țărmul Atlanticului, evitând sarea adăugată inutil.</p>
+			</article>
+
+			<article class="detail-card menu-display">
+				<h2>Display meniu</h2>
+				<div class="menu-items">
+					<div class="menu-item">
+						<h3>Tout le Homard</h3><br>
+						<p>Un omagiu complet la homar, unde fiecare parte a animalului este valorificată în trei texturi – tartar crud, gelatină din coajă și elemente crocante din coajă prăjită</p>
+						<p class="menu-price">150 €</p>
+					</div>
+					<div class="menu-item">
+						<h3>Araignée, asperge blanche et ail des ours</h3>
+						<p>Un preparat elegant cu turbot gătit la perfecțiune, asociat cu un sos profund aromat din hake afumat, care aduce complexitate și savoare marină intensă.</p>
+						<p class="menu-price">105 €</p>
+					</div>
+					<div class="menu-item">
+						<h3>Saint Pierre, artichauts, blette sauvage des marais</h3>
+						<p>O legumă sălbatică din mlaștinile Poitou-Charentes, cu un gust ușor amărui și mineral, care adaugă profunzime și autenticitate platoului.</p>
+						<p class="menu-price">125 €</p>
+					</div>
+				</div>
+			</article>
+
+			<article class="detail-card">
+				<h2 style="margin-bottom:20px;">Orar</h2>
+				<ul class="schedule-list">
+					<li><span>Luni</span><strong>[Inchis]</strong></li>
+					<li><span>Marti - Mierucri</span><strong>[19:30 - 21:00]</strong></li>
+					<li><span>Joi - Sambata</span><strong>[12:15 - 13:15]</strong></li>
+					<li><span>Duminica</span><strong>[Inchis]</strong></li>
+				</ul>
+			</article>
+			
+			<article>
+				<h2>Locație</h2>
+				<div id="map">
+					
+					<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+					        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+					        crossorigin=""></script>
+					<script>
+						var map = L.map('map').setView([46.155315, -1.159932], 16);
+						L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+							maxZoom: 19,
+							attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+						}).addTo(map);
+						var marker = L.marker([46.155315, -1.159932]).addTo(map);
+						marker.bindPopup("<b>Christopher Coutanceau</b><br>Plage de la Concurrence, La Rochelle<br>4.7 ★★★★⯪ ");
+					</script>
+				</div>
+			</article>
+
+		</section>
+
+		<div class="phone-action">
+			<a class="phone-number" href="tel:+33 5 46 41 48 19">Tel: [ +33 5 46 41 48 19 ]</a>
+		</div>
+	</main>
+</body>
+</html>

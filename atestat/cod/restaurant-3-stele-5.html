@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>RyuGin - Tokyo</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+	      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+	      crossorigin=""/>
+	<style>
+		#map { height: 300px; }
+	</style>
+</head>
+
+<body>
+	<main class="restaurant-template container">
+		<a class="back-link" href="./site.html">&larr; Inapoi la pagina principala</a>
+
+		<section class="restaurant-hero-card">
+			<div>
+				<h1>Restaurant RyuGin</h1>
+				<p class="restaurant-meta"><strong>Tokyo, Japonia</strong></p>
+				<p class="restaurant-meta"><strong>Bucatar Sef: Seiji Yamamoto</strong></p>
+			</div>
+			<div class="restaurant-stars" aria-label="3 stele Michelin">
+				<span class="sr-only">3 stele Michelin</span>
+				<img src="../poze/MichelinStar.png" alt="" aria-hidden="true">
+				<img src="../poze/MichelinStar.png" alt="" aria-hidden="true">
+				<img src="../poze/MichelinStar.png" alt="" aria-hidden="true">
+			</div>
+		</section>
+		
+		<section class="restaurant-gallery">
+			<div class="gallery-grid">
+				<div class="gallery-item gallery-item--primary">
+					<img src="../poze/RyuGin-interior.jpg" alt="Interiorul restaurantului RyuGin din Tokyo">
+				</div>
+				<div class="gallery-item">
+					<img src="../poze/Ryugin-preparat.png" alt="Preparat 1">
+				</div>
+				<div class="gallery-item">
+					<img src="../poze/NihonryoriRyugin_dish3_TheJetsetTraveller.jpg" alt="Preparat 2">
+				</div>
+			</div>
+		</section>
+		
+		<section class="restaurant-content-grid">
+			<article class="detail-card technique-card">
+				<h2>Tehnica de preparare / Motivul acordarii</h2>
+				<p style="margin: 0; padding-bottom: 0;">Nihonryori RyuGin reprezintă "tradiția kaiseki dusă la nivel de inovație științifică". Motivele principale includ:</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Respect profund pentru sezon (shun):</strong> Fiecare meniu este construit în jurul momentului optim al ingredientelor japoneze, reflectând fidel schimbările naturii.</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Integrarea tehnologiei moderne în bucătăria tradițională:</strong> Chef Seiji Yamamoto utilizează cercetarea științifică pentru a înțelege structura ingredientelor și a optimiza gustul și textura.</p>
+				<p style="margin: 0; padding-top: 25px;">Bucătăria de la RyuGin este definită prin reinterpretarea tehnicilor tradiționale japoneze cu precizie modernă. Printre abordările remarcabile se numără:</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Tehnici avansate de extracție a aromelor:</strong> Se folosesc metode precum distilarea la temperatură joasă pentru a obține esențe pure din ingrediente (ex: supe concentrate extrem de clare).</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Control extrem al temperaturii:</strong> Fiecare ingredient este gătit la temperatura exactă pentru a păstra umami-ul natural și textura optimă, uneori la nivel de fracțiuni de grad.</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Reinterpretarea tehnicii kaiseki:</strong> Preparatele respectă structura tradițională japoneză, dar includ elemente inovatoare precum gătirea sub vid sau utilizarea azotului lichid pentru texturi contrastante.</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Minimalism rafinat în plating:</strong> Fiecare farfurie este concepută pentru a evidenția ingredientul principal, folosind spațiu negativ și vase tradiționale japoneze.</p>
+			</article>
+
+			<article class="detail-card menu-display">
+				<h2>Display meniu</h2>
+				<div class="menu-items">
+					<div class="menu-item">
+						<h3>Kani no Owan</h3>
+						<p>O supă limpede obținută prin extracție lentă a aromelor de crab, servit cu carne fină și elemente sezoniere. Este apreciat pentru claritatea absolută și intensitatea umami-ului.</p>
+						<br><p class="menu-price">80 €</p>
+					</div>
+					<div class="menu-item">
+						<h3>Chawanmushi with Uni and Dashi Essence</h3>
+						<p>Budincă tradițională japoneză cu ou, uni (ouă de arici de mare) și o consomelă cristalină din dashi, demonstrând respectul faț de sezonalitate și inovație.</p>
+						<p class="menu-price">95 €</p>
+					</div>
+					<div class="menu-item">
+						<h3>Seasonal Kaiseki Course</h3>
+						<p>Urmărește ordinea tradițională japoneză (aperitiv, supă, sashimi, feluri gătite și desert). Fiecare etapă este construită în funcție de sezon. </p>
+						<br><p class="menu-price">450 €</p>
+					</div>
+				</div>
+			</article>
+
+			<article class="detail-card">
+				<h2 style="margin-bottom: 100px;">Orar</h2>
+				<ul class="schedule-list">
+					<li><span>Luni - Duminica</span><strong>[18:00 - 23:00]</strong></li>
+				</ul>
+			</article>
+			
+			<article>
+				<h2>Locație</h2>
+				<div id="map">
+					
+					<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+					        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+					        crossorigin=""></script>
+					<script>
+						var map = L.map('map').setView([35.673583, 139.759193], 16);
+						L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+							maxZoom: 19,
+							attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+						}).addTo(map);
+						var marker = L.marker([35.674280, 139.759249]).addTo(map);
+						marker.bindPopup("<b>RyuGin</b><br>Chiyoda-ku, 1-1-2 Yurakucho, Tokyo<br>4.3 ★★★★⯪ ");
+					</script>
+				</div>
+			</article>
+
+		</section>
+
+		<div class="phone-action">
+			<a class="phone-number" href="tel:+81 3-6630-0007">Tel: [ +81 3-6630-0007 ]</a>
+		</div>
+	</main>
+</body>
+</html>

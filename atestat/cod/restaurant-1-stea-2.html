@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>APRON - Viena</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+	      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+	      crossorigin=""/>
+	<style>
+		#map { height: 300px; }
+	</style>
+</head>
+
+<body>
+	<main class="restaurant-template container">
+		<a class="back-link" href="./site.html">&larr; Inapoi la pagina principala</a>
+
+		<section class="restaurant-hero-card">
+			<div>
+				<h1>Restaurant APRON</h1>
+				<p class="restaurant-meta"><strong>Viena, Austria</strong></p>
+				<p class="restaurant-meta"><strong>Bucatar Sef: Jakob Karner</strong></p>
+			</div>
+			<div class="restaurant-stars" aria-label="1 stea Michelin">
+				<span class="sr-only">1 stea Michelin</span>
+				<img src="../poze/MichelinStar.png" alt="" aria-hidden="true">
+			</div>
+		</section>
+		
+		<section class="restaurant-gallery">
+			<div class="gallery-grid">
+				<div class="gallery-item gallery-item--primary">
+					<img src="../poze/Private-Dining-3.jpg" alt="Interiorul restaurantului APRON din Viena">
+				</div>
+				<div class="gallery-item">
+					<img src="../poze/csm_Apron_07-23_Food_72dpi_034-min_985583182c.jpg" alt="Preparat 1">
+				</div>
+				<div class="gallery-item">
+					<img src="../poze/csm_Apron_07-23_Food_72dpi_062-min_c31ae61c13.jpg" alt="Preparat 2">
+				</div>
+			</div>
+		</section>
+		
+		<section class="restaurant-content-grid">
+			<article class="detail-card technique-card">
+				<h2>Tehnica de preparare / Motivul acordarii</h2>
+				<p style="margin: 0; padding-bottom: 0;">APRON reprezintă chintesența transparenței culinare și a rafinamentului modern în inima Vienei. Motivele principale pentru acordarea stelei Michelin includ:</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Conceptul de bucătărie deschisă:</strong> Restaurantul elimină barierele dintre bucătari și oaspeți, transformând actul gătirii într-o reprezentație teatrală unde precizia și onestitatea execuției sunt la vedere.</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Echilibrul între complexitate și claritate:</strong> Inspectorii Michelin au apreciat capacitatea chef-ului Jakob Kraner de a crea preparate cu straturi aromatice profunde, păstrând în același timp un focus clar pe ingredientul principal.</p>
+				<p style="margin: 0; padding-top: 25px;">Bucătăria de la APRON este definită prin tehnici avangardiste aplicate pe ingrediente locale de cea mai înaltă calitate. Se evidențiază următoarele abordări:</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Gătirea la foc deschis și grătar:</strong> Utilizarea focului viu pentru a adăuga note subtile de fum și texturi contrastante, o tehnică ce conferă preparatelor o dimensiune arhaică, dar finisată elegant.</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Interpretarea modernă a tradiției austriece:</strong> Reinterpretarea structurilor clasice prin metode contemporane, cum ar fi utilizarea spumelor aerate, a gelurilor de plante și a tehnicilor de deshidratare pentru a concentra aromele locale.</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Estetica minimalistă și precizia texturilor:</strong> Fiecare farfurie este construită cu o atenție geometrică, unde contrastul dintre elementele crocante, cremoase și suculente este calculat matematic pentru a maximiza impactul gustativ.</p>
+			</article>
+
+			<article class="detail-card menu-display">
+				<h2>Display meniu</h2>
+				<div class="menu-items">
+					<div class="menu-item">
+						<h3>Turbot cu Sfeclă Roșie</h3>
+						<p>Un pește alb subtil (turbot) combinat cu sfeclă roșie pentru un contrast de arome și texturi.</p>
+						<br><br>
+						<p class="menu-price">89 €</p>
+					</div>
+					<div class="menu-item">
+						<h3>Huchen (limba de vițel)</h3>
+						<p>Este preparată într-o manieră modernă și rafinată. Celebru pentru textura sa delicată și combinațiile inovatoare de arome.</p>
+						<br>
+						<p class="menu-price">149 €</p>
+					</div>
+					<div class="menu-item">
+						<h3>Meniu degustare de 7 feluri</h3>
+						<p>Experiența este completată de numeroase mici aperitive (amuse-bouches), precum celebrul „candelă de unt”, prepeliță cu sfeclă neagră și ficat de gâscă.</p>
+						<p class="menu-price">198 €</p>
+					</div>
+				</div>
+			</article>
+
+			<article class="detail-card">
+				<h2 style="margin-bottom:20px;">Orar</h2><br>
+				<ul class="schedule-list">
+					<li><span>Luni</span><strong>[Inchis]</strong></li>
+					<li><span>Marti - Sambata</span><strong>[18:00 - 22:00]</strong></li>
+					<li><span>Duminica</span><strong>[Inchis]</strong></li>
+				</ul>
+			</article>
+			
+			<article>
+				<h2>Locație</h2>
+				<div id="map">
+					
+					<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+					        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+					        crossorigin=""></script>
+					<script>
+						var map = L.map('map').setView([48.199514, 16.376783], 16);
+						L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+							maxZoom: 19,
+							attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+						}).addTo(map);
+						var marker = L.marker([48.199514, 16.376783]).addTo(map);
+						marker.bindPopup("<b>APRON</b><br>Am Heumarkt 35, Viena<br>4.8 ★★★★★ ");
+					</script>
+				</div>
+			</article>
+
+		</section>
+
+		<div class="phone-action">
+			<a class="phone-number" href="tel:+43 1 907 4747">Tel: [ +43 1 907 4747 ]</a>
+		</div>
+	</main>
+</body>
+</html>

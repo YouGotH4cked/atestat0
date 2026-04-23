@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DiverXO - Madrid</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+	      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+	      crossorigin=""/>
+	<style>
+		#map { height: 300px; }
+	</style>
+</head>
+
+<body>
+	<main class="restaurant-template container">
+		<a class="back-link" href="./site.html">&larr; Inapoi la pagina principala</a>
+
+		<section class="restaurant-hero-card">
+			<div>
+				<h1>Restaurant DiverXO</h1>
+				<p class="restaurant-meta"><strong>Madrid, Spania</strong></p>
+				<p class="restaurant-meta"><strong>Bucatar Sef: David Muñoz</strong></p>
+			</div>
+			<div class="restaurant-stars" aria-label="3 stele Michelin">
+				<span class="sr-only">3 stele Michelin</span>
+				<img src="../poze/MichelinStar.png" alt="" aria-hidden="true">
+				<img src="../poze/MichelinStar.png" alt="" aria-hidden="true">
+				<img src="../poze/MichelinStar.png" alt="" aria-hidden="true">
+			</div>
+		</section>
+		
+		<section class="restaurant-gallery">
+			<div class="gallery-grid">
+				<div class="gallery-item gallery-item--primary">
+					<img src="../poze/Diverxo-Madrid-Spain-02.jpg" alt="Interiorul restaurantului DiverXO din Madrid">
+				</div>
+				<div class="gallery-item">
+					<img src="../poze/Diverxo-Madrid-Spain-03.jpg" alt="Preparate creative la DiverXO, Madrid">
+				</div>
+				<div class="gallery-item">
+					<img src="../poze/DiverXO_food.png" alt="Un preparat emblematic de la DiverXO, Madrid">
+				</div>
+			</div>
+		</section>
+		
+		<section class="restaurant-content-grid">
+			<article class="detail-card technique-card">
+				<h2>Tehnica de preparare / Motivul acordarii</h2>
+				<p style="margin: 0; padding-bottom: 0;">Restaurantul DiverXO reprezintă "o călătorie avangardistă și hedonistă, unde regulile gastronomiei sunt complet rescrise". Motivele principale includ:</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Fuziune radicală și creativitate absolută:</strong> Combinații audace și imprevizibile care împletesc bucătăria iberică cu influențe asiatice și globale, rezultând într-un stil unic, exploziv și ireverențios.</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Intensitate aromatică dusă la extrem:</strong> Găsirea unui echilibru perfect într-un haos aparent de ingrediente, folosind sosuri profunde, umami și condimente curajoase pentru a oferi un șoc gustativ plăcut.</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Experiență teatrală și imersivă:</strong> Un spectacol gastronomic interactiv, dominat de universul oniric al chef-ului Dabiz Muñoz (simbolizat de porcii zburători), care provoacă și încântă toate simțurile.</p>
+				<p style="margin: 0; padding-top: 25px;">Bucătăria de la DiverXO este definită prin inovație extremă, obsesia pentru umami și o execuție tehnică impecabilă mascată de un stil nonconformist. De-a lungul timpului s-au evidențiat următoarele abordări:</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Tehnici asiatice reinterpretate:</strong> Măiestrie în utilizarea wok-ului (pentru a obține faimosul "wok hei"), prepararea de dim sum-uri hibride complexe și gătirea la abur, fuzionate organic cu tehnici clasice mediteraneene.</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Suprapunerea și evoluția sosurilor:</strong> Crearea unor fonduri, reducții și emulsii de o profunzime extraordinară, care sunt adesea adăugate în etape pentru a transforma dinamica gustului în timpul aceluiași preparat.</p>
+				<p style="margin: 0; padding-top: 0;"><strong>• Prezentare performativă pe "pânză":</strong> Plating-ul este tratat ca o artă dinamică, unde farfuriile sunt deseori pânze albe pe care preparatul este pictat și construit treptat, de multe ori chiar la masa oaspetelui.</p>
+			</article>
+
+			<article class="detail-card menu-display">
+				<h2>Display meniu</h2>
+				<div class="menu-items">
+					<div class="menu-item">
+						<h3>Minutejo del Agus</h3>
+						<p>Un sandwich crujent cu cochinillo ibéric, queso pecorino, yema de oca curată, sriracha casnică și fiambre de cap de cochinillo. Este un amestec intens de texturi și arome, combinând crocantul cu cremosul.</p>
+						<p class="menu-price">450 €</p>
+					</div>
+					<div class="menu-item">
+						<h3>Paella Nigiri</h3>
+						<p>O reinterpretare inovatoare a paellei, transformată într-un nigiri. Ardeiul este preparat ortodox, dar servit într-o formă japoneză, cu o finisare elegantă și arome mediteraneene redefinite.</p>
+						<p class="menu-price">150 €</p>
+					</div>
+					<div class="menu-item">
+						<h3>Anarchy XO</h3>
+						<p>Un gazpacho acid-picant, cu jalapeños, tomate verde, sashimi de quisquilla, eriz de mare, horseradish și nieve de espárragos. Combinâ elemente asiatice și mediteraneene într-o explozie de arome.</p>
+						<p class="menu-price">179 €</p>
+					</div>
+				</div>
+			</article>
+
+			<article class="detail-card">
+				<h2 style="margin-bottom:20px;">Orar</h2><br>
+				<ul class="schedule-list">
+					<li><span>Luni</span><strong>[Inchis]</strong></li>
+					<li><span>Marti - Vineri</span><strong>[19:30 - 00:00]</strong></li>
+					<li><span>Sambata - Duminica</span><strong>[Inchis]</strong></li>
+				</ul>
+			</article>
+			
+			<article>
+				<h2>Locație</h2>
+				<div id="map">
+					
+					<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+					        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+					        crossorigin=""></script>
+					<script>
+						var map = L.map('map').setView([40.458291, -3.685671], 16);
+						L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+							maxZoom: 19,
+							attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+						}).addTo(map);
+						var marker = L.marker([40.457988, -3.685798]).addTo(map);
+						marker.bindPopup("<b>DiverXO</b><br>Padre Damián 23, Madrid<br>4.4 ★★★★⯪ ");
+					</script>
+				</div>
+			</article>
+
+		</section>
+
+		<div class="phone-action">
+			<a class="phone-number" href="tel:+34 915 70 07 66">Tel: [ +34 915 70 07 66 ]</a>
+		</div>
+	</main>
+</body>
+</html>
