@@ -2,6 +2,7 @@
 _______________________________________________
 -Introducere in tema  
 -Rubrica cu restaurante, selectionate in functie de numarul de stele  
+-https://reactbits.dev/components/card-nav  
 -Carte de contact  
 
 # Restaurante cu stele Michelin
