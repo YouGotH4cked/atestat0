@@ -1,14 +1,276 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/path/to/your/css/styles.css">
-    <script src="/path/to/your/js/scripts.js"></script>
-    <title>Your Site Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Restaurante cu stele Michelin</title>
+	<meta name="description" content="Pagini pentru atestat despre stelele Michelin si restaurantele prezentate pe categorii.">
+	<link rel="stylesheet" href="atestat/cod/styles.css">
 </head>
 <body>
-    <h1>Welcome to the Site!</h1>
-    <!-- Other content goes here -->
+	<main>
+		<section id="acasa" class="hero">
+			<div class="hero-backgrounds" aria-hidden="true">
+				<img class="hero-bg hero-bg--left" src="atestat/poze/background1.jpg" alt="" aria-hidden="true">
+				<img class="hero-bg hero-bg--right" src="atestat/poze/background2.jpg" alt="" aria-hidden="true">
+			</div>
+
+			<div class="container hero-inner">
+				<div class="hero-content">
+					<h1 style="margin-bottom:30px;">Restaurante cu Stele Michelin</h1>
+					<p class="hero-text">
+						Ghidul Michelin este una dintre cele mai cunoscute referințe din gastronomie.
+						Stelele sale arată nivelul de excelență al unui restaurant, de la calitate constantă
+						până la experiențe culinare cu adevărat excepționale.
+					</p>
+					<div class="hero-actions" style="margin-bottom:15px;">
+						<a class="btn" href="#restaurante">Vezi preview-ul restaurantelor</a>
+						<span class="hero-note">Apasă pe orice card pentru pagina proprie.</span>
+					</div>
+				</div>
+
+				<div class="hero-panel" aria-label="Rezumat stele Michelin">
+					<div>
+						<p class="panel-label">1 stea</p>
+						<p>Un restaurant foarte bun, cu o identitate culinară clară.</p>
+					</div>
+					<div>
+						<p class="panel-label">2 stele</p>
+						<p>O bucătărie excelentă care merită o oprire specială.</p>
+					</div>
+					<div>
+						<p class="panel-label">3 stele</p>
+						<p>O experiență excepțională, considerată de top la nivel mondial.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="despre" class="container section intro-section">
+			<div class="section-heading">
+				<p class="eyebrow">Despre ghid</p>
+				<h2>Ce reprezintă stelele Michelin?</h2>
+			</div>
+			<p class="section-lead">
+				Evaluarea Michelin ține cont de calitatea ingredientelor, tehnică, armonia gusturilor,
+				personalitatea bucătarului și consecvență în timp. Din acest motiv, stelele sunt recunoscute
+				că un simbol al excelenței gastronomice.
+			</p>
+			<div class="info-grid">
+				<article class="info-card">
+					<h3>Calitate</h3>
+					<p>Ingrediente atent alese și preparate la un standard foarte înalt.</p>
+				</article>
+				<article class="info-card">
+					<h3>Creativitate</h3>
+					<p>Preparatele pun în valoare stilul personal al bucătarului.</p>
+				</article>
+				<article class="info-card">
+					<h3>Constanța</h3>
+					<p>Experiența rămâne excelență de fiecare dată când revii.</p>
+				</article>
+			</div>
+		</section>
+
+		<section id="restaurante" class="container section previews-section">
+			<div class="section-heading">
+				<h2>Listă Restaurante cu stele Michelin</h2>
+			</div>
+
+			<div class="preview-groups">
+				<section class="preview-group card-nav" data-card-nav data-open="true">
+					<div class="card-nav-top">
+						<button class="hamburger-menu" type="button" aria-label="Deschide sau inchide rubrica cu o stea" aria-expanded="true">
+							<span class="hamburger-line"></span>
+							<span class="hamburger-line"></span>
+						</button>
+
+						<div class="logo-container">
+							<div class="group-copy">
+								<p class="group-kicker">Elite Gastronomice</p>
+								<h3>Restaurante cu o stea</h3>
+							</div>
+						</div>
+					</div>
+
+					<div class="card-nav-content" id="michelin-one-content" aria-hidden="false">
+						<div class="restaurant-grid">
+						<a class="restaurant-card star-1" href="atestat/cod/restaurant-1-stea-1.html">
+							<span class="card-star" aria-label="1 stea Michelin">
+								<span class="sr-only">1 stea Michelin</span>
+								<img src="atestat/poze/MichelinStar.png" alt="" aria-hidden="true">
+							</span>
+							<h3>Restaurant Babel</h3>
+							<p>Budapesta, Ungaria</p>
+							<p>Bucătărie Modernă</p>
+						</a>
+						<a class="restaurant-card star-1" href="atestat/cod/restaurant-1-stea-2.html">
+							<span class="card-star" aria-label="1 stea Michelin">
+								<span class="sr-only">1 stea Michelin</span>
+								<img src="atestat/poze/MichelinStar.png" alt="" aria-hidden="true">
+							</span>
+							<h3>Restaurant APRON</h3>
+							<p>Viena, Austria</p>
+							<p>Creativ</p>
+						</a>
+						</div>
+					</div>
+				</section>
+
+				<section class="preview-group card-nav" data-card-nav data-open="false">
+					<div class="card-nav-top">
+						<button class="hamburger-menu" type="button" aria-label="Deschide sau inchide rubrica cu doua stele" aria-expanded="false">
+							<span class="hamburger-line"></span>
+							<span class="hamburger-line"></span>
+						</button>
+
+						<div class="logo-container">
+							<div class="group-copy">
+								<p class="group-kicker">Excelență în Farfurie</p>
+								<h3>Restaurante cu două stele</h3>
+							</div>
+						</div>
+					</div>
+
+					<div class="card-nav-content" id="michelin-two-content" aria-hidden="true">
+						<div class="restaurant-grid">
+						<a class="restaurant-card star-2" href="atestat/cod/restaurant-2-stele-1.html">
+							<span class="card-star" aria-label="2 stele Michelin">
+								<span class="sr-only">2 stele Michelin</span>
+								<img src="atestat/poze/MichelinStar.png" alt="" aria-hidden="true">
+								<img src="atestat/poze/MichelinStar.png" alt="" aria-hidden="true">
+							</span>
+							<h3>Restaurant L'Ambroisie</h3>
+							<p>Paris, Franța</p>
+							<p>Bucătărie Clasică</p>
+						</a>
+						<a class="restaurant-card star-2" href="atestat/cod/restaurant-2-stele-2.html">
+							<span class="card-star" aria-label="2 stele Michelin">
+								<span class="sr-only">2 stele Michelin</span>
+								<img src="atestat/poze/MichelinStar.png" alt="" aria-hidden="true">
+								<img src="atestat/poze/MichelinStar.png" alt="" aria-hidden="true">
+							</span>
+							<h3>Restaurant La Brezza</h3>
+							<p>Ascona, Elveția</p>
+							<p>Bucătărie Mediteraneană</p>
+						</a>
+						</div>
+					</div>
+				</section>
+
+				<section class="preview-group card-nav" data-card-nav data-open="false">
+					<div class="card-nav-top">
+						<button class="hamburger-menu" type="button" aria-label="Deschide sau inchide rubrica cu trei stele" aria-expanded="false">
+							<span class="hamburger-line"></span>
+							<span class="hamburger-line"></span>
+						</button>
+
+						<div class="logo-container">
+							<div class="group-copy">
+								<p class="group-kicker">Recomandări de Top</p>
+								<h3>Restaurante cu trei stele</h3>
+							</div>
+						</div>
+					</div>
+
+					<div class="card-nav-content" id="michelin-three-content" aria-hidden="true">
+						<div class="restaurant-grid restaurant-grid--five">
+						<a class="restaurant-card star-3" href="atestat/cod/restaurant-3-stele-1.html">
+							<span class="card-star" aria-label="3 stele Michelin">
+								<span class="sr-only">3 stele Michelin</span>
+								<img src="atestat/poze/MichelinStar.png" alt="" aria-hidden="true">
+								<img src="atestat/poze/MichelinStar.png" alt="" aria-hidden="true">
+								<img src="atestat/poze/MichelinStar.png" alt="" aria-hidden="true">
+							</span>
+							<h3>Christopher Coutanceau</h3>
+							<p>La Rochelle, Franța</p>
+							<p>Fructe de mare</p>
+						</a>
+						<a class="restaurant-card star-3" href="atestat/cod/restaurant-3-stele-2.html">
+							<span class="card-star" aria-label="3 stele Michelin">
+								<span class="sr-only">3 stele Michelin</span>
+								<img src="atestat/poze/MichelinStar.png" alt="" aria-hidden="true">
+								<img src="atestat/poze/MichelinStar.png" alt="" aria-hidden="true">
+								<img src="atestat/poze/MichelinStar.png" alt="" aria-hidden="true">
+							</span>
+							<h3>DiverXO</h3>
+							<p>Madrid, Spania</p>
+							<p>Creativ</p>
+						</a>
+						<a class="restaurant-card star-3" href="atestat/cod/restaurant-3-stele-3.html">
+							<span class="card-star" aria-label="3 stele Michelin">
+								<span class="sr-only">3 stele Michelin</span>
+								<img src="atestat/poze/MichelinStar.png" alt="" aria-hidden="true">
+								<img src="atestat/poze/MichelinStar.png" alt="" aria-hidden="true">
+								<img src="atestat/poze/MichelinStar.png" alt="" aria-hidden="true">
+							</span>
+							<h3>ABaC</h3>
+							<p>Barcelona, Spania</p>
+							<p>Creativ</p>
+						</a>
+						<a class="restaurant-card star-3" href="atestat/cod/restaurant-3-stele-4.html">
+							<span class="card-star" aria-label="3 stele Michelin">
+								<span class="sr-only">3 stele Michelin</span>
+								<img src="atestat/poze/MichelinStar.png" alt="" aria-hidden="true">
+								<img src="atestat/poze/MichelinStar.png" alt="" aria-hidden="true">
+								<img src="atestat/poze/MichelinStar.png" alt="" aria-hidden="true">
+							</span>
+							<h3>Per Se</h3>
+							<p>New York, SUA</p>
+							<p>Bucătărie Contemporană</p>
+						</a>
+						<a class="restaurant-card star-3" href="atestat/cod/restaurant-3-stele-5.html">
+							<span class="card-star" aria-label="3 stele Michelin">
+								<span class="sr-only">3 stele Michelin</span>
+								<img src="atestat/poze/MichelinStar.png" alt="" aria-hidden="true">
+								<img src="atestat/poze/MichelinStar.png" alt="" aria-hidden="true">
+								<img src="atestat/poze/MichelinStar.png" alt="" aria-hidden="true">
+							</span>
+							<h3>RyuGin</h3>
+							<p>Tokyo, Japonia</p>
+							<p>Bucătărie Japoneză</p>
+						</a>
+						</div>
+					</div>
+				</section>
+			</div>
+		</section>
+
+		<section id="contact" class="container section contact-section">
+			<div class="section-heading">
+				<h2>Informații de contact</h2>
+			</div>
+			<div class="contact-directory">
+				<ul class="contact-cards">
+					<li class="contact-person-card">
+						<img src="atestat/poze/20250623_221812.jpg" alt="Foto Cristi Mureșan">
+						<div class="contact-card-details">
+							<span class="contact-name">Mureșan Cristian Ștefan</span>
+							<span class="contact-role">Developer</span>
+							<a class="contact-phone" href="tel:+40744123456">+40 767 777 767</a>
+							<a class="contact-email" href="mailto:muresan.cristian@mstarr.lux">muresan.cristian@mstarr.lux</a>
+						</div>
+					</li>
+					<li class="contact-person-card">
+						<img src="atestat/poze/DeacPfp.jpg" alt="Foto Paula Deac">
+						<div class="contact-card-details">
+							<span class="contact-name">Deac Paula</span>
+							<span class="contact-role">Profesor coordonator</span>
+							<a class="contact-phone" href="tel:+40264112233">+40 745 469 241</a>
+							<a class="contact-email" href="mailto:paula.deac@liceu.ro">paula.cristina.deac@cnszalau.ro</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="container">
+			<p>&copy; <span id="anCurent"></span> - Proiect atestat: Restaurante cu stele Michelin</p>
+		</div>
+	</footer>
+
+	<script src="atestat/cod/script.js"></script>
 </body>
 </html>
